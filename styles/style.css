@@ -1,0 +1,307 @@
+/* Properties */
+.d-flex {
+    display: flex;
+}
+
+.d-grid {
+    display: grid;
+}
+
+.flx-col {
+    flex-direction: column;
+}
+
+.spc-evenly {
+    justify-content: space-evenly;
+}
+
+.spc-btwn {
+    justify-content: space-between;
+}
+
+.center {
+    justify-content: center;
+    align-items: center;
+}
+
+.ali-cntr {
+    align-items: center;
+}
+
+.f-size {
+    font-size: 28px;
+}
+
+.f-hd-size {
+    font-size: 50px;
+}
+
+.work-sans {
+    font-family: "Work Sans", serif;
+    font-weight: light;
+}
+
+.bottom {
+    align-items: baseline;
+}
+
+/* Ubuntu font styles */
+.ubuntu-light {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+/* Box styles */
+.p {
+    cursor: default;
+    width: 50%;
+    line-height: 28px;
+    text-align: center;
+    padding: 20px;
+}
+
+.footer {
+    width: 50%;
+    height: 16rem;
+  
+}
+
+.links {
+    list-style: none;
+    width: 40%;
+    height: 2rem;
+    font-size: 28px;
+
+
+}
+
+.links a {
+    color: #31363F;
+    transition: .5s;
+}
+
+.links a:hover {
+    color: #03346E;
+    font-size: 44px;
+}
+
+/* Header */
+header {
+    width: 100%;
+    height: 12vh;
+    justify-self: center;
+    overflow: hidden;
+    position: sticky;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.logo {
+    cursor: default;
+}
+
+nav {
+    margin: 40px;
+    width: 80%;
+    height: 10vh;
+}
+
+.btn {
+    height: 4rem;
+    width: 100px;
+}
+
+button {
+    width: 100%;
+    height: 4rem;
+    font-size: 16px;
+    color: black;
+    border: none;
+    cursor: pointer;
+    transition: 0.5s;
+    background: transparent;
+}
+
+button:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    background: #31363F;
+    color: white;
+}
+
+/* Main layout */
+main {
+ 
+    width: 100%;
+    height: auto;
+    /* Let the content decide the height */
+}
+
+section {
+   
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    /* Default: row layout (image first) */
+    height: 100vh;
+    /* Maintain consistent height */
+}
+
+/* Box styling */
+.boxA,
+.boxB {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+
+}
+
+/* Box A - image */
+.boxA {
+    width: 50%;
+    height: 100%;
+    /* Ensures the box takes full height */
+}
+
+.image {
+    margin: 24px;
+    width: 100%;
+    /* Make the image responsive */
+    max-width: 500px;
+    /* Limit the max-width */
+    height: auto;
+}
+
+.image img {
+    width: 100%;
+    /* Make image fully responsive */
+    height: auto;
+    /* Maintain aspect ratio */
+}
+
+/* Box B - text */
+.boxB {
+    width: 50%;
+    height: 96%;
+    background-color: #F4F7E5;
+}
+
+#theme1 {
+    background: #F4F7E5;
+}
+
+#theme2 {
+    background: #DCCDA2;
+}
+
+#theme3 {
+    background: #D6D7DB;
+}
+
+/* Image styling */
+.p {
+    
+    width: 48%;
+    /* Make text box width smaller */
+    height: 12rem;
+    /* Let the height adjust based on content */
+    line-height: 28px;
+    text-align: center;
+}
+
+/* Media Queries */
+
+/* Mobile (max-width: 600px) */
+@media (max-width: 600px) {
+    section {
+        flex-direction: column;
+        /* Stack sections vertically */
+        height: auto;
+        /* Adjust height for smaller screens */
+    }
+
+    .boxA,
+    .boxB {
+        width: 100%;
+        /* Full width on mobile */
+    }
+
+    .image img {
+        width: 100%;
+        /* Make image responsive */
+        height: auto;
+    }
+
+    .p {
+        width: 90%;
+        /* Reduce width on mobile */
+    }
+
+    .f-size {
+        font-size: 20px;
+        /* Smaller font size */
+    }
+
+    .f-hd-size {
+        font-size: 36px;
+        /* Smaller header size */
+    }
+}
+
+/* Tablet (max-width: 768px) */
+@media (max-width: 768px) {
+    section {
+        flex-direction: column;
+        /* Stack sections vertically */
+    }
+
+    .boxA,
+    .boxB {
+        width: 100%;
+        /* Full width for tablets */
+    }
+
+    .image img {
+        width: 100%;
+        height: auto;
+    }
+
+    .p {
+        width: 80%;
+        /* Reduce width for better layout */
+    }
+
+    .f-size {
+        font-size: 24px;
+        /* Adjust font size for tablets */
+    }
+
+    .f-hd-size {
+        font-size: 44px;
+        /* Adjust header font size */
+    }
+}
+
+/* Desktop (min-width: 1024px) */
+@media (min-width: 1024px) {
+    section {
+        flex-direction: row;
+        /* Keep sections side by side */
+    }
+
+    .boxA,
+    .boxB {
+        width: 50%;
+        /* 50% width for large screens */
+    }
+
+    .f-size {
+        font-size: 28px;
+        /* Default font size for desktop */
+    }
+
+    .f-hd-size {
+        font-size: 50px;
+        /* Default header font size */
+    }
+}
