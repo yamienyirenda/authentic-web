@@ -1,307 +1,438 @@
-/* Properties */
-.d-flex {
-    display: flex;
+/* ===== CSS Variables ===== */
+:root {
+    --bg-light: #F4F7E5;
+    --bg-dark: #1A1A1A;
+    --text-light: #333;
+    --text-dark: #F0F0F0;
+    --primary-color: #03346E;
+    --secondary-color: #DCCDA2;
+    --transition: all 0.3s ease;
+    --spacing-unit: 1rem;
+    --header-height: 80px;
 }
 
-.d-grid {
-    display: grid;
+/* ===== Base Styles ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.flx-col {
-    flex-direction: column;
+body {
+    font-family: 'Work Sans', sans-serif;
+    color: var(--text-light);
+    background-color: white;
+    transition: var(--transition);
 }
 
-.spc-evenly {
-    justify-content: space-evenly;
+body[data-theme="dark"] {
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
 }
 
-.spc-btwn {
-    justify-content: space-between;
-}
+/* ===== Utility Classes ===== */
+.d-flex { display: flex; }
+.flx-col { flex-direction: column; }
+.spc-btwn { justify-content: space-between; }
+.spc-evenly { justify-content: space-evenly; }
+.center { justify-content: center; align-items: center; }
+.ali-cntr { align-items: center; }
 
-.center {
-    justify-content: center;
-    align-items: center;
-}
-
-.ali-cntr {
-    align-items: center;
-}
-
-.f-size {
-    font-size: 28px;
-}
-
-.f-hd-size {
-    font-size: 50px;
+/* ===== Typography ===== */
+.logo {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    letter-spacing: 1px;
 }
 
 .work-sans {
-    font-family: "Work Sans", serif;
-    font-weight: light;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
 }
 
-.bottom {
-    align-items: baseline;
+.f-hd-size {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-unit);
+    font-weight: 700;
 }
 
-/* Ubuntu font styles */
-.ubuntu-light {
-    font-family: "Ubuntu", sans-serif;
-    font-weight: 300;
-    font-style: normal;
-}
-
-/* Box styles */
-.p {
-    cursor: default;
-    width: 50%;
-    line-height: 28px;
-    text-align: center;
-    padding: 20px;
-}
-
-.footer {
-    width: 50%;
-    height: 16rem;
-  
-}
-
-.links {
-    list-style: none;
-    width: 40%;
-    height: 2rem;
-    font-size: 28px;
-
-
-}
-
-.links a {
-    color: #31363F;
-    transition: .5s;
-}
-
-.links a:hover {
-    color: #03346E;
-    font-size: 44px;
-}
-
-/* Header */
+/* ===== Layout ===== */
 header {
-    width: 100%;
-    height: 12vh;
-    justify-self: center;
-    overflow: hidden;
+    height: var(--header-height);
     position: sticky;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    top: 0;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 100;
 }
 
-.logo {
-    cursor: default;
+body[data-theme="dark"] header {
+    background: #222;
 }
 
-nav {
-    margin: 40px;
-    width: 80%;
-    height: 10vh;
+.navbar {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-unit);
+    height: 100%;
 }
 
-.btn {
-    height: 4rem;
-    width: 100px;
+.nav-links {
+    gap: 2rem;
 }
 
-button {
-    width: 100%;
-    height: 4rem;
-    font-size: 16px;
-    color: black;
+.nav-links ul {
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.nav-links a.active {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.search-box {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+.search-box input {
     border: none;
-    cursor: pointer;
-    transition: 0.5s;
+    padding: 0.5rem;
+    outline: none;
     background: transparent;
 }
 
-button:hover {
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-    background: #31363F;
-    color: white;
+.search-box button {
+    background: transparent;
+    border: none;
+    padding: 0 0.5rem;
+    cursor: pointer;
 }
 
-/* Main layout */
-main {
- 
+.search-suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-height: 200px;
+    overflow-y: auto;
+    display: none;
+    z-index: 100;
+}
+
+body[data-theme="dark"] .search-suggestions {
+    background: #333;
+    border-color: #555;
+}
+
+.search-suggestions li {
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.search-suggestions li:hover {
+    background: var(--primary-color);
+    color: var(--text-dark);
+}
+
+.theme-btn, .menu-toggle {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: inherit;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+/* ===== Live Chat Styles ===== */
+.chat-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--primary-color);
+    color: var(--text-dark);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: var(--transition);
+    z-index: 200;
+}
+
+.chat-btn:hover {
+    transform: scale(1.1);
+}
+
+.chat-dialog {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 300px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    display: none;
+    flex-direction: column;
+    z-index: 200;
+}
+
+body[data-theme="dark"] .chat-dialog {
+    background: #333;
+}
+
+.chat-dialog.active {
+    display: flex;
+}
+
+.chat-header {
+    background: var(--primary-color);
+    color: var(--text-dark);
+    padding: 0.5rem;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-header h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-family: 'Oswald', sans-serif;
+}
+
+.chat-header button {
+    background: none;
+    border: none;
+    color: var(--text-dark);
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.chat-body {
+    padding: 1rem;
+    flex-grow: 1;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.chat-body p {
+    margin: 0.5rem 0;
+}
+
+.chat-footer {
+    border-top: 1px solid #ddd;
+    padding: 0.5rem;
+    display: flex;
+}
+
+body[data-theme="dark"] .chat-footer {
+    border-color: #555;
+}
+
+.chat-footer input {
+    flex-grow: 1;
+    border: none;
+    padding: 0.5rem;
+    outline: none;
+    background: transparent;
+}
+
+.chat-footer button {
+    background: var(--primary-color);
+    border: none;
+    padding: 0 0.5rem;
+    color: var(--text-dark);
+    cursor: pointer;
+}
+
+/* ===== Image Zoom Styles ===== */
+.image-wrapper {
+    position: relative;
     width: 100%;
-    height: auto;
-    /* Let the content decide the height */
+    height: 100%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.image-wrapper img {
+    transition: var(--transition);
+}
+
+@media (min-width: 769px) {
+    .image-wrapper:hover img {
+        transform: scale(1.2);
+    }
+}
+
+.image-wrapper.fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 300;
+}
+
+.image-wrapper.fullscreen img {
+    max-width: 90%;
+    max-height: 90%;
+    transform: none;
+    object-fit: contain;
+}
+
+/* ===== Main Content ===== */
+main {
+    width: 100%;
 }
 
 section {
-   
     width: 100%;
-    display: flex;
-    flex-direction: row;
-    /* Default: row layout (image first) */
-    height: 100vh;
-    /* Maintain consistent height */
+    min-height: 100vh;
 }
 
-/* Box styling */
-.boxA,
-.boxB {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-
-}
-
-/* Box A - image */
-.boxA {
+.boxA, .boxB {
     width: 50%;
-    height: 100%;
-    /* Ensures the box takes full height */
+    padding: 2rem;
 }
+
+.boxA {
+    background: white;
+}
+
+body[data-theme="dark"] .boxA {
+    background: #252525;
+}
+
+.boxB {
+    background: var(--bg-light);
+}
+
+#theme1 { background: var(--bg-light); }
+#theme2 { background: var(--secondary-color); }
+#theme3 { background: #D6D7DB; }
 
 .image {
-    margin: 24px;
-    width: 100%;
-    /* Make the image responsive */
     max-width: 500px;
-    /* Limit the max-width */
-    height: auto;
+    width: 100%;
 }
 
 .image img {
     width: 100%;
-    /* Make image fully responsive */
     height: auto;
-    /* Maintain aspect ratio */
+    border-radius: 8px;
 }
 
-/* Box B - text */
-.boxB {
-    width: 50%;
-    height: 96%;
-    background-color: #F4F7E5;
-}
-
-#theme1 {
-    background: #F4F7E5;
-}
-
-#theme2 {
-    background: #DCCDA2;
-}
-
-#theme3 {
-    background: #D6D7DB;
-}
-
-/* Image styling */
 .p {
-    
-    width: 48%;
-    /* Make text box width smaller */
-    height: 12rem;
-    /* Let the height adjust based on content */
-    line-height: 28px;
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1rem 0;
+}
+
+/* ===== Footer ===== */
+footer {
+    padding: 3rem 0;
     text-align: center;
+    gap: 1.5rem;
 }
 
-/* Media Queries */
-
-/* Mobile (max-width: 600px) */
-@media (max-width: 600px) {
-    section {
-        flex-direction: column;
-        /* Stack sections vertically */
-        height: auto;
-        /* Adjust height for smaller screens */
-    }
-
-    .boxA,
-    .boxB {
-        width: 100%;
-        /* Full width on mobile */
-    }
-
-    .image img {
-        width: 100%;
-        /* Make image responsive */
-        height: auto;
-    }
-
-    .p {
-        width: 90%;
-        /* Reduce width on mobile */
-    }
-
-    .f-size {
-        font-size: 20px;
-        /* Smaller font size */
-    }
-
-    .f-hd-size {
-        font-size: 36px;
-        /* Smaller header size */
-    }
+.links {
+    gap: 2rem;
+    font-size: 1.5rem;
 }
 
-/* Tablet (max-width: 768px) */
+.links a {
+    color: inherit;
+    transition: var(--transition);
+}
+
+.links a:hover {
+    color: var(--primary-color);
+    transform: scale(1.1);
+}
+
+/* ===== Dark Mode Styles ===== */
+body[data-theme="dark"] .boxB {
+    background: #333;
+    color: var(--text-dark);
+}
+
+body[data-theme="dark"] .search-box {
+    border-color: #555;
+}
+
+/* ===== Mobile Responsiveness ===== */
 @media (max-width: 768px) {
+    .nav-links ul {
+        display: none;
+        position: absolute;
+        top: var(--header-height);
+        left: 0;
+        width: 100%;
+        background: inherit;
+        flex-direction: column;
+        padding: 1rem;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .nav-links.active ul {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
     section {
         flex-direction: column;
-        /* Stack sections vertically */
+        min-height: auto;
     }
 
-    .boxA,
-    .boxB {
+    .boxA, .boxB {
         width: 100%;
-        /* Full width for tablets */
-    }
-
-    .image img {
-        width: 100%;
-        height: auto;
-    }
-
-    .p {
-        width: 80%;
-        /* Reduce width for better layout */
-    }
-
-    .f-size {
-        font-size: 24px;
-        /* Adjust font size for tablets */
+        min-height: 50vh;
     }
 
     .f-hd-size {
-        font-size: 44px;
-        /* Adjust header font size */
-    }
-}
-
-/* Desktop (min-width: 1024px) */
-@media (min-width: 1024px) {
-    section {
-        flex-direction: row;
-        /* Keep sections side by side */
+        font-size: 2rem;
     }
 
-    .boxA,
-    .boxB {
-        width: 50%;
-        /* 50% width for large screens */
-    }
-
-    .f-size {
-        font-size: 28px;
-        /* Default font size for desktop */
-    }
-
-    .f-hd-size {
-        font-size: 50px;
-        /* Default header font size */
+    .chat-dialog {
+        width: 90%;
+        right: 5%;
     }
 }

@@ -1,99 +1,117 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smooth</title>
-    <link rel="stylesheet" href="../styles/style.css">
+    <title>ZATHU IZI</title>
+    <link rel="stylesheet" href="styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Outfit:wght@100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
-        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Work+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
 </head>
 
 <body>
-    <header class="d-flex center">
-        <nav class="d-flex ali-cntr spc-btwn">
-            <div class="logo ubuntu-bold f-size">
+    <header id="home">
+        <nav class="navbar d-flex spc-btwn ali-cntr">
+            <div class="logo">
                 <p>ZATHU IZI</p>
             </div>
-            <div class="btn d-flex center">
-                <button class="ubuntu-bold"><i class="fa-solid fa-bars"></i></button>
+            <div class="nav-links d-flex ali-cntr">
+                <div class="search-box d-flex">
+                    <input type="text" placeholder="Search..." class="work-sans">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <ul class="d-flex">
+                    <li><a href="#home" class="work-sans">Home</a></li>
+                    <li><a href="#bauhaus" class="work-sans">Gallery</a></li>
+                    <li><a href="#africa" class="work-sans">About</a></li>
+                </ul>
+                <button id="theme-toggle" class="theme-btn"><i class="fas fa-moon"></i></button>
+                <button class="menu-toggle"><i class="fas fa-bars"></i></button>
             </div>
-
         </nav>
     </header>
+
     <main>
-        <section class="d-flex">
+        <section class="d-flex" id="bauhaus">
             <div class="boxA d-flex center">
                 <div class="image d-flex center">
-                    <img src="../images/Bauhaus Poster.jpg" alt="">
+                    <div class="image-wrapper">
+                        <img src="images/Bauhaus Poster.jpg" alt="Bauhaus Pattern" loading="lazy">
+                    </div>
                 </div>
             </div>
-            <div class="boxB d-flex center flx-col " id="theme1">
-                <span class="f-hd-size  ubuntu-bold">Bauhaus Pattern</span>
+            <div class="boxB d-flex center flx-col" id="theme1">
+                <h1 class="f-hd-size">Bauhaus Pattern</h1>
                 <div class="p work-sans">
-                    <p>
-                        Amara had always been fascinated by the rich, vibrant culture of Africa. As a young artist, she
-                        found herself drawn to the bold, abstract forms and mesmerizing patterns that permeated the
-                        continent's artistic traditions.
-                    </p>
+                    <p>Amara had always been fascinated by the rich, vibrant culture of Africa. As a young artist, she found inspiration in bold, abstract forms.</p>
                 </div>
-
             </div>
         </section>
-        <section class="d-flex">
-            <div class="boxB  d-flex center flx-col" id="theme2">
-                <span class="f-hd-size  ubuntu-bold">Africa</span>
-                <div class="p work-sans">
-                    <p>One day, while exploring a local museum, Amara stumbled upon an exhibition that would change the
-                        trajectory of her work. It was a Bauhaus-inspired showcase, where traditional African motifs had
-                        been reinterpreted through a modern, geometric lens. </p>
-                </div>
 
+        <section class="d-flex" id="africa">
+            <div class="boxB d-flex center flx-col" id="theme2">
+                <h1 class="f-hd-size">Africa</h1>
+                <div class="p work-sans">
+                    <p>One day, while exploring a local museum, Amara stumbled upon an exhibition that would change the trajectory of her work.</p>
+                </div>
             </div>
             <div class="boxA d-flex center">
                 <div class="image d-flex center">
-                    <img src="../images/9291dae2-6eaf-4579-9064-4eb000f9aad5.jpg" alt="">
+                    <div class="image-wrapper">
+                        <img src="images/9291dae2-6eaf-4579-9064-4eb000f9aad5.jpg" alt="African Art" loading="lazy">
+                    </div>
                 </div>
             </div>
         </section>
-        <section class="d-flex">
+
+        <section class="d-flex" id="african-art">
             <div class="boxA d-flex center">
                 <div class="image d-flex center">
-                    <img src="../images/d4db72e9-7323-462e-b4e0-bb549bca0453.jpg" alt="">
+                    <div class="image-wrapper">
+                        <img src="images/d4db72e9-7323-462e-b4e0-bb549bca0453.jpg" alt="African Patterns" loading="lazy">
+                    </div>
                 </div>
             </div>
-            <div class="boxB  d-flex center flx-col" id="theme3">
-                <span class="f-hd-size  ubuntu-bold">African Art</span>
+            <div class="boxB d-flex center flx-col" id="theme3">
+                <h1 class="f-hd-size">African Art</h1>
                 <div class="p work-sans">
-                    <p>One day, while exploring a local museum, Amara stumbled upon an exhibition that would change the
-                        trajectory of her work. It was a Bauhaus-inspired showcase, where traditional African motifs had
-                        been reinterpreted through a modern, geometric lens. </p>
+                    <p>It was a Bauhaus-inspired showcase, where traditional African motifs had been reinterpreted through a modern, geometric lens.</p>
                 </div>
-
             </div>
         </section>
-        <section class="d-flex center ">
-            <div class="footer d-flex center ">
-                <div class="p d-flex center work-sans">
-                    My name is Yamie Nyirenda, I am software Developer, Tech ethusiast, and a Brand Designer <br>
-                    For more info and website, click the links <br>   <i class="fa-solid fa-arrow-right"></i>
-                </div>
-                <div class="links d-flex spc-evenly ">
-                    <li><a href="https://github.com/yamienyirenda"><i class="fa-brands fa-github"></i></a></li>
-                    <li><a href="https://www.linkedin.com/in/yamie-nyirenda-5735252b4/"><i class="fa-brands fa-linkedin"></i></a></li>
-                    <li><a href="yaminyirenda@gmail.com"><i class="fa-solid fa-envelope"></i></a></li>
-                </div>
 
+        <footer class="d-flex center flx-col">
+            <div class="footer-text work-sans">
+                <p>My name is Yamie Nyirenda, I am a Software Developer, Tech Enthusiast, and Brand Designer.</p>
+                <p>For more info, click the links below <i class="fa-solid fa-arrow-down"></i></p>
             </div>
-        </section>
+            <div class="links d-flex spc-evenly">
+                <a href="https://github.com/yamienyirenda"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/yamie-nyirenda-5735252b4/"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="/cdn-cgi/l/email-protection#261f070b0f081f0f140308020726010b070f0a4805090b"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+        </footer>
     </main>
-</body>
 
+    <!-- Live Chat Button and Dialog -->
+    <button id="chat-toggle" class="chat-btn"><i class="fas fa-comment"></i></button>
+    <div id="chat-dialog" class="chat-dialog">
+        <div class="chat-header">
+            <h3>Chat with Zathu Izi</h3>
+            <button id="chat-close"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="chat-body">
+            <p>Welcome! How can I assist you today?</p>
+        </div>
+        <div class="chat-footer">
+            <input type="text" id="chat-input" placeholder="Type your message..." class="work-sans">
+            <button id="chat-send"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="JS/main.js"></script>
+</body>
 </html>
